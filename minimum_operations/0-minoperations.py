@@ -1,25 +1,20 @@
 #!/usr/bin/python3
-"""Module which contains minoperations function"""
+"""a project with the function "minoperations" """
+
 
 def minOperations(n):
-    """ Calculates the fewest number of operations needed
-        to result in exactly n H characters in the file
 
-        Args:
-            n: repetitions of H
-        Returns:
-            number of operations (Copy & Paste) to reach n Hs
-    """
     operations = 0
-    summation = 1
-    carrier = 0
+    addition = 1
+    c = 0
 
-    while summation < n:
-        if n % summation == 0:  # Copy when summation is a multiple of n
-            carrier = summation
-            summation *= 2
+    while addition < n:
+        if n % addition == 0:
+            c = addition
+            addition *= 2
             operations += 1
         else:
-            summation += carrier
-        operations += 1  # Always paste
-    return minOperations()
+            addition += c
+        operations += 1
+
+    return operations
